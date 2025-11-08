@@ -561,15 +561,6 @@ function update_packages_setup() {
     done
 }
 
-function check_connection_gui_setup() {
-    local ip="$(getIPAddress)"
-    if [[ -z "$ip" ]]; then
-        printMsgs "dialog" "Sorry, you don't seem to be connected to the internet, so installing/updating is not available."
-        return 1
-    fi
-    return 0
-}
-
 function update_packages_gui_setup() {
     local update="$1"
     if [[ "$update" != "update" ]]; then
